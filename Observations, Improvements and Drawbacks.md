@@ -24,3 +24,8 @@
   
   This clearly shows that the model could not hold long term dependencies, thus making grammatical errors, but it succesfully held short term dependencies, thus it didn't make any spelling mistake. 
 - Again the 'th' could also have been completed as 'thought', instead of 'the' (that would have been more meaningful with 'feeling'). The dataset should reflect all of these possible outcomes, with their respective inputs to make help the model output more meaningful results.
+
+### Possible Problems with a word predictor:
+All of the above mentioned (and also the code, expect for the actual model; it probably needs more layers) hold true even for the next word predictor. The word predictor is vulnerable to some other possible problems as mentioned below:
+- The vocabulary is huge (around 17k words are there) for a word predictor. There were only 27 in case of char predictor (all the alphabets and the space). Now the last layer will have to output 17k probabilities for each prediction, and even during training. This will consume a huge space.
+- The training will be much more complex, harder and time consuming since now it will have to learn to choose a word from the collection of 17k words!
