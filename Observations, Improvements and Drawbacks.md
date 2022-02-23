@@ -29,3 +29,7 @@
 All of the above mentioned (and also the code, expect for the actual model; it probably needs more layers) hold true even for the next word predictor. The word predictor is vulnerable to some other possible problems as mentioned below:
 - The vocabulary is huge (around 17k words are there) for a word predictor. There were only 27 in case of char predictor (all the alphabets and the space). Now the last layer will have to output 17k probabilities for each prediction, and even during training. This will consume a huge space.
 - The training will be much more complex, harder and time consuming since now it will have to learn to choose a word from the collection of 17k words!
+
+### Update:
+Using Conv1D layers and MaxPool1D layers also didn't bring about much change (accuracy about 52%)
+May be 100 characters is too long for any of them to learn properly
